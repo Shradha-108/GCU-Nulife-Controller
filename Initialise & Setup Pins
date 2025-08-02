@@ -1,0 +1,87 @@
+/*
+ * gpio_setup.c
+ *
+ *  Created on: 23-Jul-2025
+ *      Author: Shradha
+ *  Description: GPIO initialization for RDY, DEN, and DSEL pins
+ */
+
+#include "driverlib.h"
+#include "device.h"
+
+// ------------------------- RDY Pins --------------------------
+#define RDY1_GPIO_NUM             29
+#define RDY1_GPIO_PIN_CONFIG      GPIO_29_GPIO29
+
+#define RDY2_GPIO_NUM             12
+#define RDY2_GPIO_PIN_CONFIG      GPIO_12_GPIO12
+
+// ------------------------- DEN Pins --------------------------
+#define DEN1_GPIO_NUM             20
+#define DEN1_GPIO_PIN_CONFIG      GPIO_20_GPIO20
+
+#define DEN2_GPIO_NUM             28
+#define DEN2_GPIO_PIN_CONFIG      GPIO_28_GPIO28
+
+#define DEN3_GPIO_NUM             24
+#define DEN3_GPIO_PIN_CONFIG      GPIO_24_GPIO24
+
+#define DEN4_GPIO_NUM             33
+#define DEN4_GPIO_PIN_CONFIG      GPIO_33_GPIO33
+
+// ------------------------ DSEL Pins --------------------------
+#define DSEL1_GPIO_NUM            13
+#define DSEL1_GPIO_PIN_CONFIG     GPIO_13_GPIO13
+
+#define DSEL2_GPIO_NUM            11
+#define DSEL2_GPIO_PIN_CONFIG     GPIO_11_GPIO11
+
+// ------------------------- Function Declaration -------------------------
+void Init_gpio(void);
+
+// ------------------------- Function Definition -------------------------
+void Init_gpio(void)
+{
+    // RDY Pins
+    GPIO_setPinConfig(RDY1_GPIO_PIN_CONFIG);
+    GPIO_setPadConfig(RDY1_GPIO_NUM, GPIO_PIN_TYPE_STD);
+    GPIO_setQualificationMode(RDY1_GPIO_NUM, GPIO_QUAL_SYNC);
+    GPIO_setDirectionMode(RDY1_GPIO_NUM, GPIO_DIR_MODE_IN);
+
+    GPIO_setPinConfig(RDY2_GPIO_PIN_CONFIG);
+    GPIO_setPadConfig(RDY2_GPIO_NUM, GPIO_PIN_TYPE_STD);
+    GPIO_setQualificationMode(RDY2_GPIO_NUM, GPIO_QUAL_SYNC);
+    GPIO_setDirectionMode(RDY2_GPIO_NUM, GPIO_DIR_MODE_IN);
+
+    // DEN Pins
+    GPIO_setPinConfig(DEN1_GPIO_PIN_CONFIG);
+    GPIO_setPadConfig(DEN1_GPIO_NUM, GPIO_PIN_TYPE_STD);
+    GPIO_setQualificationMode(DEN1_GPIO_NUM, GPIO_QUAL_SYNC);
+    GPIO_setDirectionMode(DEN1_GPIO_NUM, GPIO_DIR_MODE_IN);
+
+    GPIO_setPinConfig(DEN2_GPIO_PIN_CONFIG);
+    GPIO_setPadConfig(DEN2_GPIO_NUM, GPIO_PIN_TYPE_STD);
+    GPIO_setQualificationMode(DEN2_GPIO_NUM, GPIO_QUAL_SYNC);
+    GPIO_setDirectionMode(DEN2_GPIO_NUM, GPIO_DIR_MODE_IN);
+
+    GPIO_setPinConfig(DEN3_GPIO_PIN_CONFIG);
+    GPIO_setPadConfig(DEN3_GPIO_NUM, GPIO_PIN_TYPE_STD);
+    GPIO_setQualificationMode(DEN3_GPIO_NUM, GPIO_QUAL_SYNC);
+    GPIO_setDirectionMode(DEN3_GPIO_NUM, GPIO_DIR_MODE_IN);
+
+    GPIO_setPinConfig(DEN4_GPIO_PIN_CONFIG);
+    GPIO_setPadConfig(DEN4_GPIO_NUM, GPIO_PIN_TYPE_STD);
+    GPIO_setQualificationMode(DEN4_GPIO_NUM, GPIO_QUAL_SYNC);
+    GPIO_setDirectionMode(DEN4_GPIO_NUM, GPIO_DIR_MODE_IN);
+
+    // DSEL Pins
+    GPIO_setPinConfig(DSEL1_GPIO_PIN_CONFIG);
+    GPIO_setPadConfig(DSEL1_GPIO_NUM, GPIO_PIN_TYPE_STD);
+    GPIO_setQualificationMode(DSEL1_GPIO_NUM, GPIO_QUAL_SYNC);
+    GPIO_setDirectionMode(DSEL1_GPIO_NUM, GPIO_DIR_MODE_IN);
+
+    GPIO_setPinConfig(DSEL2_GPIO_PIN_CONFIG);
+    GPIO_setPadConfig(DSEL2_GPIO_NUM, GPIO_PIN_TYPE_STD);
+    GPIO_setQualificationMode(DSEL2_GPIO_NUM, GPIO_QUAL_SYNC);
+    GPIO_setDirectionMode(DSEL2_GPIO_NUM, GPIO_DIR_MODE_IN);
+}
